@@ -1,0 +1,7 @@
+version: '3'
+services:
+  your-service-name:
+    image: hiqtextprocessor
+    container_name: HiQTextProcessor
+    ports:
+      - "6001:6001"
