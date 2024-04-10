@@ -14,8 +14,8 @@ public class TextProcessor {
 
         String textFromFile = getTextFromFile(file);
         String textWithoutPunctuation = removePunctuation(textFromFile); //Removing every punctuation from the word e.g. "HiQ," to "HiQ" for the correct counting of occurrence.
-        String wholeInTextLowerCase = textWithoutPunctuation.toLowerCase(); //To calculate same word, no matter if there is capital letter or not, e.g. "The" = "the".
-        words = countNumberOfOccurrences(wholeInTextLowerCase); //Counting number of occurrence for each word in the text.
+        String wholeTextInLowerCase = textWithoutPunctuation.toLowerCase(); //To calculate same word, no matter if there is capital letter or not, e.g. "The" = "the".
+        words = countNumberOfOccurrences(wholeTextInLowerCase); //Counting number of occurrence for each word in the text.
         String mostFrequentWord = getMostFrequentWord(words);
         differentFormatsOfTheWord = addDifferentFormatsOfTheWord(mostFrequentWord); // e.g. "The", "the", "THE"
         return addPrefixAndSuffix(textFromFile, differentFormatsOfTheWord);
@@ -39,8 +39,8 @@ public class TextProcessor {
         return textFromFile.replaceAll("[^a-zA-Z]", " ");
     }
 
-    private HashMap<String, Integer> countNumberOfOccurrences(String textWithoutPunctuation) {
-        Scanner scanner = new Scanner(textWithoutPunctuation);
+    private HashMap<String, Integer> countNumberOfOccurrences(String wholeTextInLowerCase) {
+        Scanner scanner = new Scanner(wholeTextInLowerCase);
         HashMap<String, Integer> words = new HashMap<>();
 
         while(scanner.hasNext()){
