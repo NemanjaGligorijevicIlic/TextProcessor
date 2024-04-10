@@ -6,7 +6,7 @@ When the project is unzipped, in order to test the web application, do following
 - Open Postman (or some similar tool).
 - Choose GET request.
 - Use following URL: http://localhost:6001/fetchFile
-- Click on body.
+- Click on "body".
 - In Key part, type: file
 - Choose "File" instead of "Text".
 - For "Value", choose file that contains the text you want to be processed.
