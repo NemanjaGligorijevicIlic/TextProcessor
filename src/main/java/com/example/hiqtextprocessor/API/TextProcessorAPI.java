@@ -23,4 +23,9 @@ public class TextProcessorAPI {
 
         return processor.processText(file);
     }
+
+    @GetMapping("/ELBtest")
+    public String test() {
+        return "Ok";
+    }
 }
